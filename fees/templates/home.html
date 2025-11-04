@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fee Management - Dashboard</title>
+  <style>
+    body{font-family:Arial;background:#f4f6f8;margin:0;padding:0;}
+    .header{background:#203864;color:white;padding:18px;text-align:center;}
+    .nav{display:flex;justify-content:center;background:#2f4f69;padding:10px;}
+    .nav a{color:white;margin:6px;padding:8px 12px;text-decoration:none;background:#1abc9c;border-radius:5px;}
+    .container{width:80%;margin:30px auto;}
+    .cards{display:flex;justify-content:space-between;gap:15px;}
+    .card{background:white;padding:20px;border-radius:8px;box-shadow:0 0 8px #ccc;flex:1;text-align:center;}
+    h1,h2{margin:8px;}
+  </style>
+</head>
+<body>
+<div class="header"><h1>🧾 Online Fee Management</h1></div>
+<div class="nav">
+  <a href="/">Dashboard</a>
+  <a href="/students/">Students</a>
+  <a href="/payments/">All Payments</a>
+  <a href="/add-payment/">Add Payment</a>
+  <a href="/stats/">Stats</a>
+  <a href="/admin/">Admin</a>
+</div>
+
+<div class="container">
+  <div class="cards">
+    <div class="card">
+      <h2>Total Students</h2>
+      <p style="font-size:24px">{{ total_students }}</p>
+    </div>
+    <div class="card">
+      <h2>Total Fee Amount</h2>
+      <p style="font-size:22px">₹ {{ total_fee }}</p>
+    </div>
+    <div class="card">
+      <h2>Total Collected</h2>
+      <p style="font-size:22px">₹ {{ total_paid }}</p>
+    </div>
+    <div class="card">
+      <h2>Total Due</h2>
+      <p style="font-size:22px">₹ {{ total_due }}</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

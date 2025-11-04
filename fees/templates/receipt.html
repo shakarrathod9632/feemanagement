@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Receipt</title>
+<style>
+body{font-family:Arial;background:#fff;margin:20px;}
+.box{width:700px;margin:0 auto;padding:20px;border:1px solid #ddd;}
+.header{display:flex;justify-content:space-between;}
+.details{margin-top:20px;}
+hr{border:none;border-top:1px dashed #ccc;}
+.print{margin-top:20px;text-align:center;}
+button{padding:8px 12px;border-radius:6px;background:#2b6f97;color:white;border:none;cursor:pointer;}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="header">
+    <div><h3>Fee Receipt</h3></div>
+    <div><strong>Date:</strong> {{ payment.date }}</div>
+  </div>
+  <div class="details">
+    <p><strong>Student:</strong> {{ payment.student.name }} ({{ payment.student.roll_no }})</p>
+    <p><strong>Course:</strong> {{ payment.student.course }}</p>
+    <p><strong>Amount Paid:</strong> ₹ {{ payment.amount }}</p>
+    <p><strong>Payment Method:</strong> {{ payment.method }}</p>
+    <p><strong>Note:</strong> {{ payment.note }}</p>
+    <hr>
+    <p><strong>Total Fee:</strong> ₹ {{ payment.student.total_fee }}</p>
+    <p><strong>Total Paid So Far:</strong> ₹ {{ payment.student.total_paid }}</p>
+    <p><strong>Balance:</strong> ₹ {{ payment.student.balance_due }}</p>
+  </div>
+
+  <div class="print">
+    <button onclick="window.print()">Print Receipt</button>
+  </div>
+</div>
+</body>
+</html>

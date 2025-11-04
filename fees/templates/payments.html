@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>All Payments</title>
+<style>
+body{font-family:Arial;background:#fafcff;margin:0;padding:0;}
+.header{background:#203864;color:white;padding:12px;text-align:center;}
+.nav{display:flex;justify-content:center;background:#2f4f69;padding:10px;}
+.nav a{color:white;margin:6px;padding:8px 12px;text-decoration:none;background:#3498db;border-radius:5px;}
+.table{width:90%;margin:20px auto;border-collapse:collapse;}
+th,td{padding:10px;border:1px solid #ddd;text-align:center;background:white;}
+th{background:#6c5ce7;color:white;}
+</style>
+</head>
+<body>
+<div class="header"><h2>Payments</h2></div>
+<div class="nav">
+  <a href="/">Dashboard</a>
+  <a href="/students/">Students</a>
+  <a href="/add-payment/">Add Payment</a>
+  <a href="/admin/">Admin</a>
+</div>
+
+<table class="table">
+<tr><th>Student</th><th>Amount</th><th>Date</th><th>Method</th><th>Note</th><th>Receipt</th></tr>
+{% for p in payments %}
+<tr>
+  <td>{{ p.student.name }}</td>
+  <td>₹ {{ p.amount }}</td>
+  <td>{{ p.date }}</td>
+  <td>{{ p.method }}</td>
+  <td>{{ p.note }}</td>
+  <td><a href="/receipt/{{ p.pk }}/">Print</a></td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

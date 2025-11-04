@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fee Stats</title>
+<style>
+body{font-family:Arial;background:#f3f6f8;margin:0;padding:0;}
+.header{background:#203864;color:white;padding:14px;text-align:center;}
+.container{width:70%;margin:30px auto;}
+.card{background:white;padding:18px;border-radius:8px;box-shadow:0 0 8px #ccc;margin-bottom:12px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="header"><h2>Fee Statistics</h2></div>
+<div class="container">
+  <div class="card"><h3>Total Fee Amount: ₹ {{ total_fee }}</h3></div>
+  <div class="card"><h3>Total Collected: ₹ {{ total_paid }}</h3></div>
+  <div class="card"><h3>Total Due: ₹ {{ total_due }}</h3></div>
+</div>
+</body>
+</html>
+
