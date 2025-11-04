@@ -1,1 +1,1 @@
-web: gunicorn feemanagementsystem.wsgi:application
+web: gunicorn feemanagement.wsgi:application
