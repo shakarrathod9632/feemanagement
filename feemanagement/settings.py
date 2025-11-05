@@ -124,13 +124,3 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# Auto-create superuser in Render (only if no admin exists)
-if os.environ.get('RENDER'):
-    try:
-        from django.contrib.auth.models import User
-        if not User.objects.filter(username='shankarrathod').exists():
-            User.objects.create_superuser('shankarrathod', 'sakku123@gmail.com', 'sakku@123')
-            print("✅ Admin user created: admin / Admin@123")
-    except Exception as e:
-        print("⚠️ Auto create admin failed:", e)
