@@ -17,7 +17,7 @@ def main():
         ) from exc
 
     # ✅ Auto-create superuser on Render
-    if os.environ.get("RENDER") == "true":
+    if os.environ.get("RENDER"):
         import django
         django.setup()
         from django.contrib.auth import get_user_model
@@ -33,6 +33,7 @@ def main():
         else:
             print("✅ Superuser already exists — skipping")
 
+    # ✅ Run Django normally
     execute_from_command_line(sys.argv)
 
 
